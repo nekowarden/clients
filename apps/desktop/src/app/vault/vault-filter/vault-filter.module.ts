@@ -9,6 +9,7 @@ import { CollectionFilterComponent } from "./filters/collection-filter.component
 import { FolderFilterComponent } from "./filters/folder-filter.component";
 import { OrganizationFilterComponent } from "./filters/organization-filter.component";
 import { StatusFilterComponent } from "./filters/status-filter.component";
+import { StatusUnderFilterComponent } from "./filters/status-under-filter.component";
 import { TypeFilterComponent } from "./filters/type-filter.component";
 import { VaultFilterComponent } from "./vault-filter.component";
 
@@ -20,6 +21,7 @@ import { VaultFilterComponent } from "./vault-filter.component";
     FolderFilterComponent,
     OrganizationFilterComponent,
     StatusFilterComponent,
+    StatusUnderFilterComponent,
     TypeFilterComponent,
   ],
   exports: [VaultFilterComponent],

@@ -47,4 +47,11 @@
     (onNodeCollapseStateChange)="toggleFilterNodeCollapseState($event)"
     (onFilterChange)="applyFilter($event)"
   ></app-collection-filter>
+  <app-status-under-filter
+    class="filter"
+    [hideFavorites]="hideFavorites"
+    [hideTrash]="hideTrash"
+    [activeFilter]="activeFilter"
+    (onFilterChange)="applyFilter($event)"
+  ></app-status-under-filter>
 </ng-container>
