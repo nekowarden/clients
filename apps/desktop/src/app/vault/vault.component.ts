@@ -14,6 +14,7 @@ import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
 import { ModalService } from "@bitwarden/angular/services/modal.service";
 import { VaultFilter } from "@bitwarden/angular/vault/vault-filter/models/vault-filter.model";
 import { BroadcasterService } from "@bitwarden/common/abstractions/broadcaster.service";
+import { CipherService } from "@bitwarden/common/abstractions/cipher.service";
 import { EventCollectionService } from "@bitwarden/common/abstractions/event/event-collection.service";
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { MessagingService } from "@bitwarden/common/abstractions/messaging.service";
@@ -98,7 +99,9 @@ export class VaultComponent implements OnInit, OnDestroy {
     private totpService: TotpService,
     private passwordRepromptService: PasswordRepromptService,
     private stateService: StateService,
-    private searchBarService: SearchBarService
+    private searchBarService: SearchBarService,
+
+    protected cipherService: CipherService
   ) {}
 
   async ngOnInit() {
@@ -223,6 +226,8 @@ export class VaultComponent implements OnInit, OnDestroy {
         cipherView.id = params.cipherId;
         if (params.action === "clone") {
           await this.cloneCipher(cipherView);
+        } else if (params.action === "favorite") {
+          await this.favoriteCipher(cipherView);
         } else if (params.action === "edit") {
           await this.editCipher(cipherView);
         } else {
@@ -279,6 +284,13 @@ export class VaultComponent implements OnInit, OnDestroy {
         click: () =>
           this.functionWithChangeDetection(() => {
             this.cloneCipher(cipher);
+          }),
+      });
+      menu.push({
+        label: this.i18nService.t("favorite"),
+        click: () =>
+          this.functionWithChangeDetection(() => {
+            this.favoriteCipher(cipher);
           }),
       });
     }
@@ -388,6 +400,34 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.cipherId = cipher.id;
     this.action = "clone";
     this.go();
+  }
+
+  async favoriteCipher(cipher: CipherView) {
+    if (!(await this.canNavigateAway("edit", cipher))) {
+      return;
+    } else if (!(await this.passwordReprompt(cipher))) {
+      return;
+    }
+
+    await this.favoriteCipherWithoutPasswordPrompt(cipher);
+  }
+
+  async favoriteCipherWithoutPasswordPrompt(cipher: CipherView) {
+    if (!(await this.canNavigateAway("edit", cipher))) {
+      return;
+    }
+
+    const cipherR = await this.cipherService.get(cipher.id);
+    const cipherItem = await cipherR.decrypt();
+    cipherItem.favorite = !cipherItem.favorite;
+    const cipherW = await this.cipherService.encrypt(cipherItem);
+    await this.cipherService.updateWithServer(cipherW);
+
+    this.cipherId = cipher.id;
+    this.action = "view";
+    this.go();
+    await this.vaultItemsComponent.refresh();
+    await this.viewComponent.load();
   }
 
   async addCipher(type: CipherType = null) {

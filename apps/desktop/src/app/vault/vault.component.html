@@ -15,6 +15,7 @@
     *ngIf="cipherId && action === 'view'"
     [cipherId]="cipherId"
     (onCloneCipher)="cloneCipherWithoutPasswordPrompt($event)"
+    (onFavoriteCipher)="favoriteCipherWithoutPasswordPrompt($event)"
     (onEditCipher)="editCipherWithoutPasswordPrompt($event)"
     (onViewCipherPasswordHistory)="viewCipherPasswordHistory($event)"
     (onRestoredCipher)="restoredCipher($event)"

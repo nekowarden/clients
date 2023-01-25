@@ -43,6 +43,7 @@ export class ViewComponent implements OnDestroy, OnInit {
   @Input() cipherId: string;
   @Output() onEditCipher = new EventEmitter<CipherView>();
   @Output() onCloneCipher = new EventEmitter<CipherView>();
+  @Output() onFavoriteCipher = new EventEmitter<CipherView>();
   @Output() onShareCipher = new EventEmitter<CipherView>();
   @Output() onDeletedCipher = new EventEmitter<CipherView>();
   @Output() onRestoredCipher = new EventEmitter<CipherView>();
@@ -155,6 +156,15 @@ export class ViewComponent implements OnDestroy, OnInit {
   async clone() {
     if (await this.promptPassword()) {
       this.onCloneCipher.emit(this.cipher);
+      return true;
+    }
+
+    return false;
+  }
+
+  async favorite() {
+    if (await this.promptPassword()) {
+      this.onFavoriteCipher.emit(this.cipher);
       return true;
     }
 
