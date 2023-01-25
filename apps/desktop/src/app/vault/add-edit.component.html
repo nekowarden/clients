@@ -9,7 +9,7 @@
           {{ title }}
         </h2>
         <div class="box-content">
-          <div class="box-content-row" *ngIf="!editMode" appBoxRow>
+          <div class="box-content-row" appBoxRow>
             <label for="type">{{ "type" | i18n }}</label>
             <select id="type" name="Type" [(ngModel)]="cipher.type">
               <option *ngFor="let o of typeOptions" [ngValue]="o.value">{{ o.name }}</option>
