@@ -1,5 +1,16 @@
 <ng-container *ngIf="show">
   <ul class="filter-options">
+    <li class="filter-option" [ngClass]="{ active: activeFilter.status === 'sends' }">
+      <span class="filter-buttons">
+        <button
+          class="filter-button"
+          (click)="applyFilter('sends')"
+          [attr.aria-pressed]="activeFilter.status === 'sends'"
+        >
+          <i class="bwi bwi-fw bwi-send" aria-hidden="true"></i>&nbsp;Send
+        </button>
+      </span>
+    </li>
     <li
       class="filter-option"
       *ngIf="!hideTrash"

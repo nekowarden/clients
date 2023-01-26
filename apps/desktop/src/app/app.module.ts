@@ -88,6 +88,7 @@ import { NavComponent } from "./layout/nav.component";
 import { SearchComponent } from "./layout/search/search.component";
 import { AddEditComponent as SendAddEditComponent } from "./send/add-edit.component";
 import { EffluxDatesComponent as SendEffluxDatesComponent } from "./send/efflux-dates.component";
+import { SendItemsComponent } from "./send/items.component";
 import { SendComponent } from "./send/send.component";
 import { SharedModule } from "./shared/shared.module";
 import { AddEditCustomFieldsComponent } from "./vault/add-edit-custom-fields.component";
@@ -208,6 +209,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     VaultTimeoutInputComponent,
     ViewComponent,
     ViewCustomFieldsComponent,
+    SendItemsComponent,
   ],
   bootstrap: [AppComponent],
 })

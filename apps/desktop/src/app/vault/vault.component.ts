@@ -28,9 +28,12 @@ import { CipherType } from "@bitwarden/common/enums/cipherType";
 import { EventType } from "@bitwarden/common/enums/eventType";
 import { CipherView } from "@bitwarden/common/models/view/cipher.view";
 import { FolderView } from "@bitwarden/common/models/view/folder.view";
+import { SendView } from "@bitwarden/common/models/view/send.view";
 
 import { invokeMenu, RendererMenuItem } from "../../utils";
 import { SearchBarService } from "../layout/search/search-bar.service";
+import { AddEditComponent as AddSendEditComponent } from "../send/add-edit.component";
+import { SendItemsComponent } from "../send/items.component";
 
 import { AddEditComponent } from "./add-edit.component";
 import { AttachmentsComponent } from "./attachments.component";
@@ -42,6 +45,7 @@ import { ShareComponent } from "./share.component";
 import { VaultFilterComponent } from "./vault-filter/vault-filter.component";
 import { VaultItemsComponent } from "./vault-items.component";
 import { ViewComponent } from "./view.component";
+
 
 const BroadcasterSubscriptionId = "VaultComponent";
 
@@ -65,6 +69,8 @@ export class VaultComponent implements OnInit, OnDestroy {
   collectionsModalRef: ViewContainerRef;
   @ViewChild("folderAddEdit", { read: ViewContainerRef, static: true })
   folderAddEditModalRef: ViewContainerRef;
+  @ViewChild(SendItemsComponent, { static: true }) sendItemsComponent: SendItemsComponent;
+  @ViewChild(AddSendEditComponent) addSendEditComponent: AddSendEditComponent;
 
   action: string;
   cipherId: string = null;
@@ -81,6 +87,9 @@ export class VaultComponent implements OnInit, OnDestroy {
   deleted = false;
   userHasPremiumAccess = false;
   activeFilter: VaultFilter = new VaultFilter();
+
+  navSendView = false;
+  sendId: string;
 
   private modal: ModalRef = null;
 
@@ -259,6 +268,8 @@ export class VaultComponent implements OnInit, OnDestroy {
     this.cipherId = cipher.id;
     this.action = "view";
     this.go();
+
+    this.sendId = null;
   }
 
   viewCipherMenu(cipher: CipherView) {
@@ -589,10 +600,16 @@ export class VaultComponent implements OnInit, OnDestroy {
       this.i18nService.t(this.calculateSearchBarLocalizationString(vaultFilter))
     );
     this.activeFilter = vaultFilter;
-    await this.vaultItemsComponent.reload(
-      this.activeFilter.buildFilter(),
-      vaultFilter.status === "trash"
-    );
+
+    this.navSendView = this.activeFilter.status === "sends";
+
+    if (this.vaultItemsComponent != null) {
+      await this.vaultItemsComponent.reload(
+        this.activeFilter.buildFilter(),
+        vaultFilter.status === "trash"
+      );
+    }
+
     this.go();
   }
 
@@ -617,6 +634,9 @@ export class VaultComponent implements OnInit, OnDestroy {
     }
     if (vaultFilter.myVaultOnly) {
       return "searchMyVault";
+    }
+    if (vaultFilter.status === "sends") {
+      return "searchSends";
     }
 
     return "searchVault";
@@ -803,5 +823,47 @@ export class VaultComponent implements OnInit, OnDestroy {
       cipher.reprompt === CipherRepromptType.None ||
       (await this.passwordRepromptService.showPasswordPrompt())
     );
+  }
+
+  addSend() {
+    this.action = "addSend";
+    if (this.addSendEditComponent != null) {
+      this.addSendEditComponent.sendId = null;
+      this.addSendEditComponent.send = null;
+      this.addSendEditComponent.load();
+    }
+  }
+
+  cancelSend(s: SendView) {
+    this.action = "";
+    this.sendId = null;
+  }
+
+  async deletedSend(s: SendView) {
+    await this.sendItemsComponent.refresh();
+    this.action = "";
+    this.sendId = null;
+  }
+
+  async savedSend(s: SendView) {
+    await this.sendItemsComponent.refresh();
+    this.selectSend(s.id);
+  }
+
+  async selectSend(sendId: string) {
+    if (sendId === this.sendId && this.action === "editSend") {
+      return;
+    }
+    this.action = "editSend";
+    this.sendId = sendId;
+    if (this.addSendEditComponent != null) {
+      this.addSendEditComponent.sendId = sendId;
+      await this.addSendEditComponent.refresh();
+    }
+    this.cipherId = null;
+  }
+
+  get selectedSendType() {
+    return this.sendItemsComponent.sends.find((s) => s.id === this.sendId)?.type;
   }
 }

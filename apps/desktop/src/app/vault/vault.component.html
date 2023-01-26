@@ -2,6 +2,7 @@
   <app-vault-items
     id="items"
     class="items"
+    [hidden]="navSendView"
     [activeCipherId]="cipherId"
     (onCipherClicked)="viewCipher($event)"
     (onCipherRightClicked)="viewCipherMenu($event)"
@@ -42,10 +43,37 @@
     (onGenerateUsername)="openGenerator(true, false)"
   >
   </app-vault-add-edit>
+  <app-send-items
+    id="sendItems"
+    class="items"
+    [hidden]="!navSendView"
+    [sendId]="sendId"
+    (onAddSend)="addSend()"
+    (onSelectSend)="selectSend($event)"
+    (onDeletedSend)="deletedSend($event)"
+  >
+  </app-send-items>
+  <app-send-add-edit
+    id="addSendEdit"
+    class="details"
+    *ngIf="action == 'addSend' || action == 'editSend'"
+    [sendId]="sendId"
+    [type]="selectedSendType"
+    (onSavedSend)="savedSend($event)"
+    (onCancelled)="cancelSend($event)"
+    (onDeletedSend)="deletedSend($event)"
+  ></app-send-add-edit>
   <div
     id="logo"
     class="logo"
-    *ngIf="action !== 'add' && action !== 'edit' && action !== 'view' && action !== 'clone'"
+    *ngIf="
+      action !== 'add' &&
+      action !== 'edit' &&
+      action !== 'view' &&
+      action !== 'clone' &&
+      action !== 'addSend' &&
+      action !== 'editSend'
+    "
   >
     <div class="content">
       <div class="inner-content">
@@ -61,7 +89,6 @@
       (onAddFolder)="addFolder()"
       (onEditFolder)="editFolder($event.id)"
     ></app-vault-filter>
-    <app-nav class="nav"></app-nav>
   </div>
 </div>
 <ng-template #generator></ng-template>
