@@ -23,7 +23,7 @@ export class NativeMessagingMain {
   ) {}
 
   async listen() {
-    ipc.config.id = "bitwarden";
+    ipc.config.id = "nekowarden";
     ipc.config.retry = 1500;
     if (process.platform === "darwin") {
       if (!existsSync(`${homedir()}/tmp`)) {
@@ -78,7 +78,7 @@ export class NativeMessagingMain {
 
   generateManifests() {
     const baseJson = {
-      name: "com.8bit.bitwarden",
+      name: "com.shiyunjin.nekowarden",
       description: "Bitwarden desktop <-> browser bridge",
       path: this.binaryPath(),
       type: "stdio",
@@ -107,12 +107,12 @@ export class NativeMessagingMain {
 
         this.createWindowsRegistry(
           "HKLM\\SOFTWARE\\Mozilla\\Firefox",
-          "HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden",
+          "HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.shiyunjin.nekowarden",
           path.join(destination, "firefox.json")
         );
         this.createWindowsRegistry(
           "HKCU\\SOFTWARE\\Google\\Chrome",
-          "HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden",
+          "HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.shiyunjin.nekowarden",
           path.join(destination, "chrome.json")
         );
         break;
@@ -121,7 +121,7 @@ export class NativeMessagingMain {
         const nmhs = this.getDarwinNMHS();
         for (const [key, value] of Object.entries(nmhs)) {
           if (existsSync(value)) {
-            const p = path.join(value, "NativeMessagingHosts", "com.8bit.bitwarden.json");
+            const p = path.join(value, "NativeMessagingHosts", "com.shiyunjin.nekowarden.json");
 
             let manifest: any = chromeJson;
             if (key === "Firefox") {
@@ -140,21 +140,21 @@ export class NativeMessagingMain {
       case "linux":
         if (existsSync(`${this.homedir()}/.mozilla/`)) {
           this.writeManifest(
-            `${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`,
+            `${this.homedir()}/.mozilla/native-messaging-hosts/com.shiyunjin.nekowarden.json`,
             firefoxJson
           );
         }
 
         if (existsSync(`${this.homedir()}/.config/google-chrome/`)) {
           this.writeManifest(
-            `${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`,
+            `${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.shiyunjin.nekowarden.json`,
             chromeJson
           );
         }
 
         if (existsSync(`${this.homedir()}/.config/microsoft-edge/`)) {
           this.writeManifest(
-            `${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`,
+            `${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.shiyunjin.nekowarden.json`,
             chromeJson
           );
         }
@@ -166,7 +166,7 @@ export class NativeMessagingMain {
 
   generateDdgManifests() {
     const manifest = {
-      name: "com.8bit.bitwarden",
+      name: "com.shiyunjin.nekowarden",
       description: "Bitwarden desktop <-> DuckDuckGo bridge",
       path: this.binaryPath(),
       type: "stdio",
@@ -174,7 +174,7 @@ export class NativeMessagingMain {
     switch (process.platform) {
       case "darwin": {
         /* eslint-disable-next-line no-useless-escape */
-        const path = `${this.homedir()}/Library/Containers/com.duckduckgo.macos.browser/Data/Library/Application\ Support/NativeMessagingHosts/com.8bit.bitwarden.json`;
+        const path = `${this.homedir()}/Library/Containers/com.duckduckgo.macos.browser/Data/Library/Application\ Support/NativeMessagingHosts/com.shiyunjin.nekowarden.json`;
         this.writeManifest(path, manifest).catch((e) =>
           this.logService.error(`Error writing manifest for DuckDuckGo. ${e}`)
         );
@@ -191,16 +191,16 @@ export class NativeMessagingMain {
         fs.unlink(path.join(this.userPath, "browsers", "firefox.json"));
         fs.unlink(path.join(this.userPath, "browsers", "chrome.json"));
         this.deleteWindowsRegistry(
-          "HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.8bit.bitwarden"
+          "HKCU\\SOFTWARE\\Mozilla\\NativeMessagingHosts\\com.shiyunjin.nekowarden"
         );
         this.deleteWindowsRegistry(
-          "HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.8bit.bitwarden"
+          "HKCU\\SOFTWARE\\Google\\Chrome\\NativeMessagingHosts\\com.shiyunjin.nekowarden"
         );
         break;
       case "darwin": {
         const nmhs = this.getDarwinNMHS();
         for (const [, value] of Object.entries(nmhs)) {
-          const p = path.join(value, "NativeMessagingHosts", "com.8bit.bitwarden.json");
+          const p = path.join(value, "NativeMessagingHosts", "com.shiyunjin.nekowarden.json");
           if (existsSync(p)) {
             fs.unlink(p);
           }
@@ -209,28 +209,32 @@ export class NativeMessagingMain {
       }
       case "linux":
         if (
-          existsSync(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`)
-        ) {
-          fs.unlink(`${this.homedir()}/.mozilla/native-messaging-hosts/com.8bit.bitwarden.json`);
-        }
-
-        if (
           existsSync(
-            `${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`
+            `${this.homedir()}/.mozilla/native-messaging-hosts/com.shiyunjin.nekowarden.json`
           )
         ) {
           fs.unlink(
-            `${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.8bit.bitwarden.json`
+            `${this.homedir()}/.mozilla/native-messaging-hosts/com.shiyunjin.nekowarden.json`
           );
         }
 
         if (
           existsSync(
-            `${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`
+            `${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.shiyunjin.nekowarden.json`
           )
         ) {
           fs.unlink(
-            `${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.8bit.bitwarden.json`
+            `${this.homedir()}/.config/google-chrome/NativeMessagingHosts/com.shiyunjin.nekowarden.json`
+          );
+        }
+
+        if (
+          existsSync(
+            `${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.shiyunjin.nekowarden.json`
+          )
+        ) {
+          fs.unlink(
+            `${this.homedir()}/.config/microsoft-edge/NativeMessagingHosts/com.shiyunjin.nekowarden.json`
           );
         }
         break;
@@ -243,7 +247,7 @@ export class NativeMessagingMain {
     switch (process.platform) {
       case "darwin": {
         /* eslint-disable-next-line no-useless-escape */
-        const path = `${this.homedir()}/Library/Containers/com.duckduckgo.macos.browser/Data/Library/Application\ Support/NativeMessagingHosts/com.8bit.bitwarden.json`;
+        const path = `${this.homedir()}/Library/Containers/com.duckduckgo.macos.browser/Data/Library/Application\ Support/NativeMessagingHosts/com.shiyunjin.nekowarden.json`;
         if (existsSync(path)) {
           fs.unlink(path);
         }

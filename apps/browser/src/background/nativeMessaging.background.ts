@@ -93,7 +93,7 @@ export class NativeMessagingBackground {
     this.stateService.setBiometricFingerprintValidated(false);
 
     return new Promise<void>((resolve, reject) => {
-      this.port = BrowserApi.connectNative("com.8bit.bitwarden");
+      this.port = BrowserApi.connectNative("com.shiyunjin.nekowarden");
 
       this.connecting = true;
 

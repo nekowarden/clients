@@ -1,11 +1,11 @@
 {
   "extraMetadata": {
-    "name": "bitwarden"
+    "name": "nekowarden"
   },
-  "productName": "Bitwarden",
-  "appId": "com.bitwarden.desktop",
+  "productName": "Nekowarden",
+  "appId": "com.nekowarden.desktop",
   "buildDependenciesFromSource": true,
-  "copyright": "Copyright © 2015-2023 Bitwarden Inc.",
+  "copyright": "Copyright © 2023 Nekowarden Inc.",
   "directories": {
     "buildResources": "resources",
     "output": "dist",
@@ -89,7 +89,7 @@
     "synopsis": "A secure and free password manager for all of your devices.",
     "target": ["deb", "freebsd", "rpm", "AppImage", "snap"],
     "desktop": {
-      "Name": "Bitwarden",
+      "Name": "Nekowarden",
       "Type": "Application",
       "GenericName": "Password Manager"
     }
@@ -138,10 +138,10 @@
   "appx": {
     "artifactName": "${productName}-${version}-${arch}.${ext}",
     "backgroundColor": "#175DDC",
-    "applicationId": "bitwardendesktop",
-    "identityName": "8bitSolutionsLLC.bitwardendesktop",
+    "applicationId": "nekowardendesktop",
+    "identityName": "shiyunjin.nekowardendesktop",
     "publisher": "CN=14D52771-DE3C-4886-B8BF-825BA7690418",
-    "publisherDisplayName": "8bit Solutions LLC",
+    "publisherDisplayName": "shiyunjin",
     "languages": ["en-US"]
   },
   "deb": {
@@ -165,8 +165,8 @@
   },
   "protocols": [
     {
-      "name": "Bitwarden",
-      "schemes": ["bitwarden"]
+      "name": "Nekowarden",
+      "schemes": ["nekowarden"]
     }
   ]
 }

@@ -7,7 +7,7 @@
       },
       "ids": [
         "https://vault.bitwarden.com",
-        "ios:bundle-id:com.8bit.bitwarden",
+        "ios:bundle-id:com.shiyunjin.nekowarden",
         "android:apk-key-hash:dUGFzUzf3lmHSLBDBIv+WaFyZMI"
       ]
     }

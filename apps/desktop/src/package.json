@@ -1,15 +1,15 @@
 {
-  "name": "@bitwarden/desktop",
-  "productName": "Bitwarden",
+  "name": "@nekowarden/desktop",
+  "productName": "Nekowarden",
   "description": "A secure and free password manager for all of your devices.",
-  "version": "2023.1.2",
-  "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
-  "homepage": "https://bitwarden.com",
+  "version": "1.20230102.0",
+  "author": "Nekowarden Inc. <to@shiyunjin.cn> (https://github.com/nekowarden)",
+  "homepage": "https://github.com/nekowarden",
   "license": "GPL-3.0",
   "main": "main.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitwarden/clients.git"
+    "url": "git+https://github.com/nekowarden/clients.git"
   },
   "dependencies": {
     "@bitwarden/desktop-native": "file:../desktop_native"

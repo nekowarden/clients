@@ -1,18 +1,19 @@
 {
-  "name": "@bitwarden/desktop",
+  "name": "@nekowarden/desktop",
   "description": "A secure and free password manager for all of your devices.",
-  "version": "2023.1.2",
+  "version": "1.20230102.0",
   "keywords": [
+    "nekowarden",
     "bitwarden",
     "password",
     "vault",
     "password manager"
   ],
-  "author": "Bitwarden Inc. <hello@bitwarden.com> (https://bitwarden.com)",
-  "homepage": "https://bitwarden.com",
+  "author": "Nekowarden Inc. <to@shiyunjin.cn> (https://github.com/nekowarden)",
+  "homepage": "https://github.com/nekowarden",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bitwarden/clients.git"
+    "url": "git+https://github.com/nekowarden/clients.git"
   },
   "license": "GPL-3.0",
   "scripts": {
