@@ -83,6 +83,7 @@ import { PasswordRepromptComponent } from "./components/password-reprompt.compon
 import { SetPinComponent } from "./components/set-pin.component";
 import { UserVerificationComponent } from "./components/user-verification.component";
 import { AccountSwitcherComponent } from "./layout/account-switcher.component";
+import { AddButtonComponent } from "./layout/add-button.component";
 import { HeaderComponent } from "./layout/header.component";
 import { NavComponent } from "./layout/nav.component";
 import { SearchComponent } from "./layout/search/search.component";
@@ -210,6 +211,7 @@ registerLocaleData(localeZhTw, "zh-TW");
     ViewComponent,
     ViewCustomFieldsComponent,
     SendItemsComponent,
+    AddButtonComponent,
   ],
   bootstrap: [AppComponent],
 })

@@ -54,6 +54,7 @@ import { NativeMessagingService } from "../../services/native-messaging.service"
 import { PasswordRepromptService } from "../../services/password-reprompt.service";
 import { StateService } from "../../services/state.service";
 import { LoginGuard } from "../guards/login.guard";
+import { AddButtonService } from "../layout/add-button.service";
 import { SearchBarService } from "../layout/search/search-bar.service";
 
 import { DesktopFileDownloadService } from "./desktop-file-download.service";
@@ -69,6 +70,7 @@ const RELOAD_CALLBACK = new InjectionToken<() => any>("RELOAD_CALLBACK");
     InitService,
     NativeMessagingService,
     SearchBarService,
+    AddButtonService,
     LoginGuard,
     {
       provide: APP_INITIALIZER,

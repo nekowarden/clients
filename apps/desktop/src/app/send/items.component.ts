@@ -57,7 +57,6 @@ export class SendItemsComponent extends BaseSendComponent implements OnInit, OnD
   }
 
   async ngOnInit() {
-    this.searchBarService.setEnabled(true);
     this.searchBarService.setPlaceholderText(this.i18nService.t("searchSends"));
 
     super.ngOnInit();
@@ -75,7 +74,6 @@ export class SendItemsComponent extends BaseSendComponent implements OnInit, OnD
 
   ngOnDestroy() {
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
-    this.searchBarService.setEnabled(false);
   }
 
   viewSendMenu(send: SendView) {

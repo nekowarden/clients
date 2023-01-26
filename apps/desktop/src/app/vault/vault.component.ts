@@ -8,6 +8,7 @@ import {
   ViewContainerRef,
 } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
+import { Subject, takeUntil } from "rxjs";
 import { first } from "rxjs/operators";
 
 import { ModalRef } from "@bitwarden/angular/components/modal/modal.ref";
@@ -31,6 +32,7 @@ import { FolderView } from "@bitwarden/common/models/view/folder.view";
 import { SendView } from "@bitwarden/common/models/view/send.view";
 
 import { invokeMenu, RendererMenuItem } from "../../utils";
+import { AddButtonService } from "../layout/add-button.service";
 import { SearchBarService } from "../layout/search/search-bar.service";
 import { AddEditComponent as AddSendEditComponent } from "../send/add-edit.component";
 import { SendItemsComponent } from "../send/items.component";
@@ -45,7 +47,6 @@ import { ShareComponent } from "./share.component";
 import { VaultFilterComponent } from "./vault-filter/vault-filter.component";
 import { VaultItemsComponent } from "./vault-items.component";
 import { ViewComponent } from "./view.component";
-
 
 const BroadcasterSubscriptionId = "VaultComponent";
 
@@ -93,6 +94,8 @@ export class VaultComponent implements OnInit, OnDestroy {
 
   private modal: ModalRef = null;
 
+  private destroy$ = new Subject<void>();
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -109,6 +112,7 @@ export class VaultComponent implements OnInit, OnDestroy {
     private passwordRepromptService: PasswordRepromptService,
     private stateService: StateService,
     private searchBarService: SearchBarService,
+    private addButtonService: AddButtonService,
 
     protected cipherService: CipherService
   ) {}
@@ -218,13 +222,30 @@ export class VaultComponent implements OnInit, OnDestroy {
     document.body.classList.remove("layout_frontend");
 
     this.searchBarService.setEnabled(true);
+    this.addButtonService.setEnabled(true);
     this.searchBarService.setPlaceholderText(this.i18nService.t("searchVault"));
+
+    this.addButtonService.emitted$.pipe(takeUntil(this.destroy$)).subscribe((action) => {
+      if (action.isCipher) {
+        this.action = null;
+        this.addCipher(action.typeCipher);
+        return;
+      }
+      if (action.isSend) {
+        this.addSend();
+        return;
+      }
+    });
   }
 
   ngOnDestroy() {
     this.searchBarService.setEnabled(false);
+    this.addButtonService.setEnabled(false);
     this.broadcasterService.unsubscribe(BroadcasterSubscriptionId);
     document.body.classList.add("layout_frontend");
+
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   async load() {

@@ -31,8 +31,12 @@
   }
 
   app-account-switcher {
-    justify-self: end;
+    justify-self: start;
     height: 100%;
+  }
+
+  add-button {
+    justify-self: start;
   }
 
   .search {

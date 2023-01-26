@@ -20,7 +20,7 @@
       *ngIf="activeAccount.email != null"
       aria-hidden="true"
     ></app-avatar>
-    <span>{{ activeAccount.email }}</span>
+    <span>{{ activeAccount.name }}</span>
   </ng-container>
   <ng-template #noActiveAccount>
     <span>{{ "switchAccount" | i18n }}</span>
@@ -40,7 +40,6 @@
   (backdropClick)="close()"
   (detach)="close()"
   [cdkConnectedOverlayOpen]="showSwitcher && isOpen"
-  [cdkConnectedOverlayPositions]="overlayPostition"
   cdkConnectedOverlayMinWidth="250px"
 >
   <div
