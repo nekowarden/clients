@@ -143,7 +143,7 @@ jobs:
         env:
           PKG_VERSION: ${{ steps.version.outputs.version }}
         working-directory: apps/desktop/artifacts
-        run: mv Bitwarden-${{ env.PKG_VERSION }}-universal.pkg Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive
+        run: mv Nekowarden-${{ env.PKG_VERSION }}-universal.pkg Nekowarden-${{ env.PKG_VERSION }}-universal.pkg.archive
 
       - name: Set staged rollout percentage
         if: ${{ github.event.inputs.electron_publish }}
@@ -155,34 +155,34 @@ jobs:
           echo "stagingPercentage: ${ROLLOUT_PCT}" >> apps/desktop/artifacts/${RELEASE_CHANNEL}-linux.yml
           echo "stagingPercentage: ${ROLLOUT_PCT}" >> apps/desktop/artifacts/${RELEASE_CHANNEL}-mac.yml
 
-      - name: Publish artifacts to S3
-        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish }}
-        env:
-          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
-          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
-          AWS_DEFAULT_REGION: 'us-west-2'
-          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
-        working-directory: apps/desktop/artifacts
-        run: |
-          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
-          --acl "public-read" \
-          --recursive \
-          --quiet
-
-      - name: Publish artifacts to R2
-        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish }}
-        env:
-          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.r2-electron-access-id }}
-          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.r2-electron-access-key }}
-          AWS_DEFAULT_REGION: 'us-east-1'
-          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.r2-electron-bucket-name }}
-          CF_ACCOUNT: ${{ steps.retrieve-secrets.outputs.cf-prod-account }}
-        working-directory: apps/desktop/artifacts
-        run: |
-          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
-          --recursive \
-          --quiet \
-          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
+#      - name: Publish artifacts to S3
+#        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish }}
+#        env:
+#          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.aws-electron-access-id }}
+#          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.aws-electron-access-key }}
+#          AWS_DEFAULT_REGION: 'us-west-2'
+#          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.aws-electron-bucket-name }}
+#        working-directory: apps/desktop/artifacts
+#        run: |
+#          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
+#          --acl "public-read" \
+#          --recursive \
+#          --quiet
+#
+#      - name: Publish artifacts to R2
+#        if: ${{ github.event.inputs.release_type != 'Dry Run' && github.event.inputs.electron_publish }}
+#        env:
+#          AWS_ACCESS_KEY_ID: ${{ steps.retrieve-secrets.outputs.r2-electron-access-id }}
+#          AWS_SECRET_ACCESS_KEY: ${{ steps.retrieve-secrets.outputs.r2-electron-access-key }}
+#          AWS_DEFAULT_REGION: 'us-east-1'
+#          AWS_S3_BUCKET_NAME: ${{ steps.retrieve-secrets.outputs.r2-electron-bucket-name }}
+#          CF_ACCOUNT: ${{ steps.retrieve-secrets.outputs.cf-prod-account }}
+#        working-directory: apps/desktop/artifacts
+#        run: |
+#          aws s3 cp ./ $AWS_S3_BUCKET_NAME/desktop/ \
+#          --recursive \
+#          --quiet \
+#          --endpoint-url https://${CF_ACCOUNT}.r2.cloudflarestorage.com
 
       - name: Create Release
         uses: ncipollo/release-action@95215a3cb6e6a1908b3c44e00b4fdb15548b1e09
@@ -191,27 +191,27 @@ jobs:
           PKG_VERSION: ${{ steps.version.outputs.version }}
           RELEASE_CHANNEL: ${{ steps.release-channel.outputs.channel }}
         with:
-          artifacts: "apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-amd64.deb,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x86_64.rpm,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64.freebsd,
-            apps/desktop/artifacts/bitwarden_${{ env.PKG_VERSION }}_amd64.snap,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x86_64.AppImage,
-            apps/desktop/artifacts/Bitwarden-Portable-${{ env.PKG_VERSION }}.exe,
-            apps/desktop/artifacts/Bitwarden-Installer-${{ env.PKG_VERSION }}.exe,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-ia32-store.appx,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-ia32.appx,
-            apps/desktop/artifacts/bitwarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64-store.appx,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-x64.appx,
-            apps/desktop/artifacts/bitwarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-arm64-store.appx,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-arm64.appx,
-            apps/desktop/artifacts/bitwarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
-            apps/desktop/artifacts/bitwarden.${{ env.PKG_VERSION }}.nupkg,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal-mac.zip,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.dmg,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
-            apps/desktop/artifacts/Bitwarden-${{ env.PKG_VERSION }}-universal.pkg.archive,
+          artifacts: "apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-amd64.deb,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-x86_64.rpm,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-x64.freebsd,
+            apps/desktop/artifacts/nekowarden_${{ env.PKG_VERSION }}_amd64.snap,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-x86_64.AppImage,
+            apps/desktop/artifacts/Nekowarden-Portable-${{ env.PKG_VERSION }}.exe,
+            apps/desktop/artifacts/Nekowarden-Installer-${{ env.PKG_VERSION }}.exe,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-ia32-store.appx,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-ia32.appx,
+            apps/desktop/artifacts/nekowarden-${{ env.PKG_VERSION }}-ia32.nsis.7z,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-x64-store.appx,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-x64.appx,
+            apps/desktop/artifacts/nekowarden-${{ env.PKG_VERSION }}-x64.nsis.7z,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-arm64-store.appx,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-arm64.appx,
+            apps/desktop/artifacts/nekowarden-${{ env.PKG_VERSION }}-arm64.nsis.7z,
+            apps/desktop/artifacts/nekowarden.${{ env.PKG_VERSION }}.nupkg,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-universal-mac.zip,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-universal.dmg,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-universal.dmg.blockmap,
+            apps/desktop/artifacts/Nekowarden-${{ env.PKG_VERSION }}-universal.pkg.archive,
             apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}.yml,
             apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}-linux.yml,
             apps/desktop/artifacts/${{ env.RELEASE_CHANNEL }}-mac.yml"

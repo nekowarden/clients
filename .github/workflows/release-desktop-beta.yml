@@ -159,35 +159,35 @@ jobs:
       - name: Upload .deb artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-amd64.deb
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-amd64.deb
           if-no-files-found: error
 
       - name: Upload .rpm artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-x86_64.rpm
           if-no-files-found: error
 
       - name: Upload .freebsd artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-x64.freebsd
           if-no-files-found: error
 
       - name: Upload .snap artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: bitwarden_${{ env._PACKAGE_VERSION }}_amd64.snap
+          name: nekowarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           path: apps/desktop/dist/nekowarden_${{ env._PACKAGE_VERSION }}_amd64.snap
           if-no-files-found: error
 
       - name: Upload .AppImage artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-x86_64.AppImage
           if-no-files-found: error
 
@@ -297,94 +297,94 @@ jobs:
       - name: Fix NSIS artifact names for auto-updater
         run: |
           Rename-Item -Path .\dist\nsis-web\Nekowarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z `
-            -NewName bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
+            -NewName nekowarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
           Rename-Item -Path .\dist\nsis-web\Nekowarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z `
-            -NewName bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
+            -NewName nekowarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
           Rename-Item -Path .\dist\nsis-web\Nekowarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z `
-            -NewName bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
+            -NewName nekowarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
 
       - name: Upload portable exe artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-Portable-${{ env._PACKAGE_VERSION }}.exe
+          name: Nekowarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           path: apps/desktop/dist/Nekowarden-Portable-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload installer exe artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-Installer-${{ env._PACKAGE_VERSION }}.exe
+          name: Nekowarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           path: apps/desktop/dist/nsis-web/Nekowarden-Installer-${{ env._PACKAGE_VERSION }}.exe
           if-no-files-found: error
 
       - name: Upload appx ia32 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32.appx
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-ia32.appx
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-ia32.appx
           if-no-files-found: error
 
       - name: Upload store appx ia32 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-ia32-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS ia32 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: bitwarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
+          name: nekowarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
           path: apps/desktop/dist/nsis-web/nekowarden-${{ env._PACKAGE_VERSION }}-ia32.nsis.7z
           if-no-files-found: error
 
       - name: Upload appx x64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64.appx
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-x64.appx
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-x64.appx
           if-no-files-found: error
 
       - name: Upload store appx x64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-x64-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS x64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: bitwarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
+          name: nekowarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
           path: apps/desktop/dist/nsis-web/nekowarden-${{ env._PACKAGE_VERSION }}-x64.nsis.7z
           if-no-files-found: error
 
       - name: Upload appx ARM64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64.appx
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-arm64.appx
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-arm64.appx
           if-no-files-found: error
 
       - name: Upload store appx ARM64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: Bitwarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
+          name: Nekowarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           path: apps/desktop/dist/Nekowarden-${{ env._PACKAGE_VERSION }}-arm64-store.appx
           if-no-files-found: error
 
       - name: Upload NSIS ARM64 artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: bitwarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
+          name: nekowarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           path: apps/desktop/dist/nsis-web/nekowarden-${{ env._PACKAGE_VERSION }}-arm64.nsis.7z
           if-no-files-found: error
 
       - name: Upload nupkg artifact
         uses: actions/upload-artifact@6673cd052c4cd6fcf4b4e6e60ea986c889389535
         with:
-          name: bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
-          path: apps/desktop/dist/chocolatey/bitwarden.${{ env._PACKAGE_VERSION }}.nupkg
+          name: nekowarden.${{ env._PACKAGE_VERSION }}.nupkg
+          path: apps/desktop/dist/chocolatey/nekowarden.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
       - name: Upload auto-update artifact
