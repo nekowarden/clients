@@ -3,7 +3,7 @@
     "message": "Nekowarden"
   },
   "extName": {
-    "message": "Nekowarden - besplatni upravitelj lozinki",
+    "message": "Nekowarden",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
