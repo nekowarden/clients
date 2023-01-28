@@ -79,7 +79,7 @@ export class NativeMessagingMain {
   generateManifests() {
     const baseJson = {
       name: "com.shiyunjin.nekowarden",
-      description: "Bitwarden desktop <-> browser bridge",
+      description: "Nekowarden desktop <-> browser bridge",
       path: this.binaryPath(),
       type: "stdio",
     };
@@ -92,7 +92,7 @@ export class NativeMessagingMain {
       ...baseJson,
       ...{
         allowed_origins: [
-          "chrome-extension://nngceckbapebfimnlniiiahkandclblb/",
+          "chrome-extension://onlccklpmpkhcdeelfbiipebpgcgapii/",
           "chrome-extension://jbkfoedolllekgbhcbcoahefnbanhhlh/",
           "chrome-extension://ccnckbpmaceehanjmeomladnmlffdjgn/",
         ],
