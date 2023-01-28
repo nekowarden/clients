@@ -1,6 +1,12 @@
 ---
 name: Automatic pull request responses
+
 on:
+  workflow_dispatch: {}
+
+jobs: {}
+
+#on:
 #  pull_request:
 #    types:
 #      - labeled

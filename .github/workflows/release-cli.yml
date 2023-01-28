@@ -3,6 +3,11 @@ name: Release CLI
 run-name: Release CLI ${{ inputs.release_type }}
 
 on:
+  workflow_dispatch: {}
+
+jobs: {}
+
+#on:
 #  workflow_dispatch:
 #    inputs:
 #      release_type:

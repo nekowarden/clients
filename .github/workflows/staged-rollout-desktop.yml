@@ -2,6 +2,11 @@
 name: Staged Rollout Desktop
 
 on:
+  workflow_dispatch: {}
+
+jobs: {}
+
+#on:
 #  workflow_dispatch:
 #    inputs:
 #      rollout_percentage:

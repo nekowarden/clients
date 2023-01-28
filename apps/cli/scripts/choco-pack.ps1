@@ -24,7 +24,7 @@ Copy-Item $license -Destination $distChocoToolsDir;
 
 $srcPackage = $rootDir + "\package.json";
 $srcPackageVersion = (Get-Content -Raw -Path $srcPackage | ConvertFrom-Json).version;
-$nuspec = $distChocoDir + "\bitwarden-cli.nuspec";
+$nuspec = $distChocoDir + "\nekowarden-cli.nuspec";
 choco pack $nuspec --version $srcPackageVersion --out $distChocoDir
 
 if ($push) {

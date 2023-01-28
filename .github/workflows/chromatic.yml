@@ -2,6 +2,11 @@
 name: Chromatic
 
 on:
+  workflow_dispatch: {}
+
+jobs: {}
+
+#on:
 #  push:
 #    paths-ignore:
 #      - '.github/workflows/**'
