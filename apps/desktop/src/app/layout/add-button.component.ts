@@ -8,7 +8,6 @@ import { invokeMenu, RendererMenuItem } from "../../utils";
 
 import { AddButtonService, AddButtonState } from "./add-button.service";
 
-
 @Component({
   selector: "add-button",
   templateUrl: "add-button.component.html",
