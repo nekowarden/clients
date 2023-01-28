@@ -22,8 +22,7 @@
   "electronVersion": "21.3.1",
   "generateUpdatesFilesForAllChannels": true,
   "publish": {
-    "provider": "generic",
-    "url": "https://artifacts.bitwarden.com/desktop"
+    "provider": "github"
   },
   "mac": {
     "electronUpdaterCompatibility": ">=0.0.1",
