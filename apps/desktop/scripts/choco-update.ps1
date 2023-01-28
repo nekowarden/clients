@@ -24,7 +24,7 @@ $uri = "https://github.com/bitwarden/clients/releases/download/desktop-v" + $ver
 Invoke-RestMethod -Uri $uri -OutFile $exe
 
 $checksum = checksum -t sha256 $exe
-$nuspec = $distChocoDir + "\bitwarden.nuspec";
+$nuspec = $distChocoDir + "\nekowarden.nuspec";
 $chocoInstall = $distChocoDir + "\tools\chocolateyinstall.ps1";
 
 (Get-Content $chocoInstall).replace('__version__', $version).replace('__checksum__', $checksum) | Set-Content $chocoInstall

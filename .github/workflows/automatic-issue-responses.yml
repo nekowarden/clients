@@ -1,6 +1,6 @@
-#---
-#name: Automatic issue responses
-#on:
+---
+name: Automatic issue responses
+on:
 #  issues:
 #    types:
 #      - labeled

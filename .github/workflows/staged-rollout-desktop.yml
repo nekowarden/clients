@@ -1,7 +1,7 @@
-#---
-#name: Staged Rollout Desktop
-#
-#on:
+---
+name: Staged Rollout Desktop
+
+on:
 #  workflow_dispatch:
 #    inputs:
 #      rollout_percentage:

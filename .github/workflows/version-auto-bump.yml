@@ -1,7 +1,7 @@
-#---
-#name: Version Auto Bump
-#
-#on:
+---
+name: Version Auto Bump
+
+on:
 #  push:
 #    tags:
 #      - desktop-v**

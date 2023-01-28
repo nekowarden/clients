@@ -1,7 +1,7 @@
-#---
-#name: Bump CLI Formula
-#
-#on:
+---
+name: Bump CLI Formula
+
+on:
 #  push:
 #    tags:
 #      - cli-v**

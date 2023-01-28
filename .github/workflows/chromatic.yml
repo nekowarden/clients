@@ -1,7 +1,7 @@
-#---
-#name: Chromatic
-#
-#on:
+---
+name: Chromatic
+
+on:
 #  push:
 #    paths-ignore:
 #      - '.github/workflows/**'

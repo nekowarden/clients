@@ -1,7 +1,7 @@
-#---
-#name: Crowdin Sync
-#
-#on:
+---
+name: Crowdin Sync
+
+on:
 #  workflow_dispatch:
 #    inputs: {}
 #  schedule:

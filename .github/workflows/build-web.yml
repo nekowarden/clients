@@ -1,7 +1,7 @@
-#---
-#name: Build Web
-#
-#on:
+---
+name: Build Web
+
+on:
 #  pull_request:
 #    branches-ignore:
 #      - 'l10n_master'

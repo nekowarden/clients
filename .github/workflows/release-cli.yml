@@ -1,8 +1,8 @@
-#---
-#name: Release CLI
-#run-name: Release CLI ${{ inputs.release_type }}
-#
-#on:
+---
+name: Release CLI
+run-name: Release CLI ${{ inputs.release_type }}
+
+on:
 #  workflow_dispatch:
 #    inputs:
 #      release_type:

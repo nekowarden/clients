@@ -1,9 +1,9 @@
-#---
-#name: QA - Web Release
-#
-#on:
-#  workflow_dispatch: {}
-#
+---
+name: QA - Web Release
+
+on:
+  workflow_dispatch: {}
+
 #jobs:
 #  cfpages-deploy:
 #    name: Deploy Web Vault to QA CloudFlare Pages branch

@@ -1,7 +1,7 @@
-#---
-#name: Bump Desktop Cask
-#
-#on:
+---
+name: Bump Desktop Cask
+
+on:
 #  push:
 #    tags:
 #      - desktop-v**
