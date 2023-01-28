@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>nekowarden</id>
+    <version>0.0.0</version>
+    <packageSourceUrl>https://github.com/nekowarden/clients/tree/master/apps/desktop/stores/chocolatey</packageSourceUrl>
+    <owners>shiyunjin</owners>
+    <title>Nekowarden</title>
+    <authors>shiyunjin</authors>
+    <projectUrl>https://github.com/nekowarden/clients</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/bitwarden/brand/master/icons/256x256.png</iconUrl>
+    <copyright>Copyright © 2023 shiyunjin</copyright>
+    <projectSourceUrl>https://github.com/nekowarden/clients/</projectSourceUrl>
+    <docsUrl>https://github.com/nekowarden/clients/wiki</docsUrl>
+    <bugTrackerUrl>https://github.com/nekowarden/clients/issues</bugTrackerUrl>
+    <releaseNotes>https://github.com/nekowarden/clients/releases</releaseNotes>
+    <licenseUrl>https://github.com/nekowarden/clients/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>nekowarden password manager</tags>
+    <summary>A secure and free password manager for all of your devices.</summary>
+    <description>
+      NAMED BEST PASSWORD MANAGER BY THE VERGE, U.S. NEWS &amp; WORLD REPORT, CNET, AND MORE.
+
+      Manage, store, secure, and share unlimited passwords across unlimited devices from anywhere. Nekowarden delivers open source password management solutions to everyone, whether at  home, at work, or on the go.
+
+      Generate strong, unique, and random passwords based on security requirements for every website you frequent.
+
+      Nekowarden Send quickly transmits encrypted information --- files and plaintext -- directly to anyone.
+    </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
