@@ -16,8 +16,8 @@ if(Test-Path -Path $distChocoDir) {
 }
 New-Item -ItemType directory -Path $distChocoDir | Out-Null
 
-$nupkg = "bitwarden-cli." + $version + ".nupkg"
-$uri = "https://github.com/bitwarden/cli/releases/download/v" + $version + "/" + $nupkg;
+$nupkg = "nekowarden-cli." + $version + ".nupkg"
+$uri = "https://github.com/nekowarden/clients/releases/download/v" + $version + "/" + $nupkg;
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-RestMethod -Uri $uri -OutFile $($distChocoDir + "\" + $nupkg)
 

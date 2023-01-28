@@ -121,14 +121,14 @@ jobs:
           {
             BLOCK "040904b0"
             {
-              VALUE "CompanyName", "Bitwarden Inc."
-              VALUE "ProductName", "Bitwarden"
-              VALUE "FileDescription", "Bitwarden CLI"
+              VALUE "CompanyName", "shiyunjin"
+              VALUE "ProductName", "Nekowarden"
+              VALUE "FileDescription", "Nekowarden CLI"
               VALUE "FileVersion", "$env:_PACKAGE_VERSION"
               VALUE "ProductVersion", "$env:_PACKAGE_VERSION"
               VALUE "OriginalFilename", "bw.exe"
               VALUE "InternalName", "bw"
-              VALUE "LegalCopyright", "Copyright Bitwarden Inc."
+              VALUE "LegalCopyright", "Copyright shiyunjin."
             }
           }
           BLOCK "VarFileInfo"
@@ -238,14 +238,14 @@ jobs:
       - name: Upload Chocolatey asset
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
-          name: bitwarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
-          path: apps/cli/dist/chocolatey/bitwarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
+          name: nekowarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
+          path: apps/cli/dist/chocolatey/nekowarden-cli.${{ env._PACKAGE_VERSION }}.nupkg
           if-no-files-found: error
 
       - name: Upload NPM Build Directory asset
         uses: actions/upload-artifact@3cea5372237819ed00197afe530f5a7ea3e805c8  # v3.1.0
         with:
-          name: bitwarden-cli-${{ env._PACKAGE_VERSION }}-npm-build.zip
+          name: nekowarden-cli-${{ env._PACKAGE_VERSION }}-npm-build.zip
           path: apps/cli/build
           if-no-files-found: error
 
