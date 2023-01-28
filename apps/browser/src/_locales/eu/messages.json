@@ -1,13 +1,13 @@
 {
   "appName": {
-    "message": "Bitwarden"
+    "message": "Nekowarden"
   },
   "extName": {
-    "message": "Bitwarden - Pasahitz kudeatzailea",
+    "message": "Nekowarden - Pasahitz kudeatzailea",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
-    "message": "Bitwarden, zure gailu guztietarako pasahitzen kudeatzaile seguru eta doakoa da.",
+    "message": "Nekowarden, zure gailu guztietarako pasahitzen kudeatzaile seguru eta doakoa da.",
     "description": "Extension description"
   },
   "loginOrCreateNewAccount": {
@@ -215,7 +215,7 @@
     "message": "Automatikoki pasahitz sendo eta bakarrak sortzen ditu zure saio-hasieratarako."
   },
   "bitWebVault": {
-    "message": "Bitwarden kutxa gotorra"
+    "message": "Nekowarden kutxa gotorra"
   },
   "importItems": {
     "message": "Inportatu elementuak"
@@ -597,7 +597,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Bitwardenek pasahitz hau gogoratu beharko lizuke?"
+    "message": "Nekowardenek pasahitz hau gogoratu beharko lizuke?"
   },
   "notificationAddSave": {
     "message": "Gorde"
@@ -609,7 +609,7 @@
     "message": "Galdetu saio-hasiera baten pasahitza eguneratzeko, webgune batean aldaketaren bat atzematen denean."
   },
   "notificationChangeDesc": {
-    "message": "Bitwardenen pasahitz hau eguneratu nahi duzu?"
+    "message": "Nekowardenen pasahitz hau eguneratu nahi duzu?"
   },
   "notificationChangeSave": {
     "message": "Eguneratu"
@@ -665,7 +665,7 @@
     "message": "Esportazio honek zure datuak zifratzen ditu zure kontuaren zifratze-gakoa erabiliz. Inoiz zure kontuko zifratze-gakoa aldatuz gero, berriro esportatu beharko duzu, ezin izango baituzu fitxategi hori deszifratu."
   },
   "encExportAccountWarningDesc": {
-    "message": "Kontua zifratzeko gakoak Bitwarden erabiltzaile bakoitzarentzako bakarrik dira; beraz, ezin da inportatu beste kontu batean zifratutako esportazio bat."
+    "message": "Kontua zifratzeko gakoak Nekowarden erabiltzaile bakoitzarentzako bakarrik dira; beraz, ezin da inportatu beste kontu batean zifratutako esportazio bat."
   },
   "exportMasterPassword": {
     "message": "Sartu pasahitz nagusia kutxa gotorreko datuak esportatzeko."
@@ -795,7 +795,7 @@
     "message": "Premium bazkide zara!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Eskerrik asko Bitwarden babesteagatik."
+    "message": "Eskerrik asko Nekowarden babesteagatik."
   },
   "premiumPrice": {
     "message": "Dena, urtean $PRICE$gatik!",
@@ -924,7 +924,7 @@
     "message": "Ostatze ingurune propioa"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Bitwarden instalatzeko, zehaztu ostatatze propioaren oinarrizko URL-a."
+    "message": "Nekowarden instalatzeko, zehaztu ostatatze propioaren oinarrizko URL-a."
   },
   "customEnvironment": {
     "message": "Ingurune pertsonalizatua"
@@ -1353,7 +1353,7 @@
     "message": "Pasahitz nagusi ahula"
   },
   "weakMasterPasswordDesc": {
-    "message": "Aukeratu duzun pasahitza ahula da. Pasahitz nagusi sendo bat (edo pasaesaldi bat) erabili beharko zenuke Bitwarden kontua behar bezala babesteko. Ziur zaude pasahitz nagusi hau erabili nahi duzula?"
+    "message": "Aukeratu duzun pasahitza ahula da. Pasahitz nagusi sendo bat (edo pasaesaldi bat) erabili beharko zenuke Nekowarden kontua behar bezala babesteko. Ziur zaude pasahitz nagusi hau erabili nahi duzula?"
   },
   "pin": {
     "message": "PIN-a",
@@ -1363,7 +1363,7 @@
     "message": "PIN-arekin desblokeatu"
   },
   "setYourPinCode": {
-    "message": "Ezarri zure PIN kodea Bitwarden desblokeatzeko. Zure PIN-aren konfigurazioa berrezarriko da, noizbait aplikaziotik erabat saioa ixten baduzu."
+    "message": "Ezarri zure PIN kodea Nekowarden desblokeatzeko. Zure PIN-aren konfigurazioa berrezarriko da, noizbait aplikaziotik erabat saioa ixten baduzu."
   },
   "pinRequired": {
     "message": "PIN-a beharrezkoa da."
@@ -1378,7 +1378,7 @@
     "message": "Mahaigainaren aldetiko berrespenaren zain"
   },
   "awaitDesktopDesc": {
-    "message": "Mesedez, egiaztatu biometrikoen erabilera Mahaigaineko Bitwarden aplikazioan, nabigatzailerako biometrikoak gaitzeko."
+    "message": "Mesedez, egiaztatu biometrikoen erabilera Mahaigaineko Nekowarden aplikazioan, nabigatzailerako biometrikoak gaitzeko."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Nabigatzailea berrabiaraztean pasahitz nagusiarekin blokeatu"
@@ -1515,13 +1515,13 @@
     "message": "Nabigatzailearen integrazioa ez dago gaituta"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "Nabigatzailearen integrazioa ez dago gaituta mahaigaineko Bitwarden aplikazioan. Mesedez, gaitu mahaigaineko aplikazioko ezarpenetan."
+    "message": "Nabigatzailearen integrazioa ez dago gaituta mahaigaineko Nekowarden aplikazioan. Mesedez, gaitu mahaigaineko aplikazioko ezarpenetan."
   },
   "startDesktopTitle": {
-    "message": "Hasi mahaigaineko Bitwarden aplikazioa"
+    "message": "Hasi mahaigaineko Nekowarden aplikazioa"
   },
   "startDesktopDesc": {
-    "message": "Biometria bidez desblokeatu aurretik mahaigaineko Bitwarden aplikazioak hasita egon behar du."
+    "message": "Biometria bidez desblokeatu aurretik mahaigaineko Nekowarden aplikazioak hasita egon behar du."
   },
   "errorEnableBiometricTitle": {
     "message": "Ezin izan da biometria gaitu"
@@ -1557,7 +1557,7 @@
     "message": "Baimena ukatuta"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Mahaigaineko Bitwarden aplikazioarekin komunikatzeko baimenik gabe, ezin diogu datu biometrikorik eman nabigatzailearen gehigarriari. Mesedez, saiatu berriro."
+    "message": "Mahaigaineko Nekowarden aplikazioarekin komunikatzeko baimenik gabe, ezin diogu datu biometrikorik eman nabigatzailearen gehigarriari. Mesedez, saiatu berriro."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Akatsa baimen eskaeran"
@@ -1575,7 +1575,7 @@
     "message": "Kanporatutako domeinuak"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwardenek ez du eskatuko domeinu horietarako saio-hasierako xehetasunak gordetzea. Orrialdea eguneratu behar duzu aldaketek eragina izan dezaten."
+    "message": "Nekowardenek ez du eskatuko domeinu horietarako saio-hasierako xehetasunak gordetzea. Orrialdea eguneratu behar duzu aldaketek eragina izan dezaten."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ ez da onartutako domeinu bat",
@@ -1588,15 +1588,15 @@
   },
   "send": {
     "message": "Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "searchSends": {
     "message": "Send-ak bilatu",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "addSend": {
     "message": "Gehitu Send-a",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Testua"
@@ -1606,7 +1606,7 @@
   },
   "allSends": {
     "message": "Send guztiak",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Sarbide kopuru maximoa gaindituta",
@@ -1623,7 +1623,7 @@
   },
   "copySendLink": {
     "message": "Send esteka kopiatu",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Kendu pasahitza"
@@ -1636,11 +1636,11 @@
   },
   "deletedSend": {
     "message": "Send-a ezabatua",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Send esteka",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Desgaitua"
@@ -1650,23 +1650,23 @@
   },
   "deleteSend": {
     "message": "Ezabatu Send-a",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Ziur al zaude Send hau ezabatu nahi duzula?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Editatu Send-a",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendTypeHeader": {
     "message": "Zein Send mota da hau?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendNameDesc": {
     "message": "Send hau deskribatzeko izena.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendFileDesc": {
     "message": "Bidali nahi duzun fitxategia."
@@ -1676,14 +1676,14 @@
   },
   "deletionDateDesc": {
     "message": "Send-a betiko ezabatuko da zehaztutako datan eta orduan.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Iraungitze data"
   },
   "expirationDateDesc": {
     "message": "Hala ezartzen bada, Send honetarako sarbidea zehaztutako egunean eta orduan amaituko da.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "oneDay": {
     "message": "Egun 1"
@@ -1705,56 +1705,56 @@
   },
   "maximumAccessCountDesc": {
     "message": "Hala ezartzen bada, erabiltzaileak ezin izango dira Send honetara sartu gehienezko sarbide kopurura iritsi ondoren.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
     "message": "Nahi izanez gero, pasahitza eskatu erabiltzaileak Send honetara sar daitezen.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
     "message": "Send honi buruzko ohar pribatuak.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
     "message": "Desgaitu Send hau inor sar ez dadin.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendShareDesc": {
     "message": "Gordetzean, kopiatu Send honen esteka arbelean.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendTextDesc": {
     "message": "Bidali nahi duzun testua."
   },
   "sendHideText": {
     "message": "Ezkutatu Send-eko testu hau, modu lehenetsian.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "currentAccessCount": {
     "message": "Uneko sarbide kopurua"
   },
   "createSend": {
     "message": "Sortu Send berria",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "Pasahitz berria"
   },
   "sendDisabled": {
     "message": "Send-a desgaitua",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Enpresa-politika baten ondorioz, lehendik dagoen Send-a bakarrik ezaba dezakezu.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send-a sortua",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send-a editatua",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
     "message": "Fitxategi bat aukeratzeko, ireki gehigarria alboko barran (ahal bada) edo atera leiho berri batera banner honetan klik eginez."

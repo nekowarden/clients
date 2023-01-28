@@ -1,9 +1,9 @@
 {
   "appName": {
-    "message": "Bitwarden"
+    "message": "Nekowarden"
   },
   "extName": {
-    "message": "Bitwarden",
+    "message": "Nekowarden",
     "description": "Extension name, MUST be less than 40 characters (Safari restriction)"
   },
   "extDesc": {
@@ -215,7 +215,7 @@
     "message": "Gera automaticamente palavras-passe fortes e únicas para as suas credenciais."
   },
   "bitWebVault": {
-    "message": "Cofre Web Bitwarden"
+    "message": "Cofre Web Nekowarden"
   },
   "importItems": {
     "message": "Importar itens"
@@ -597,7 +597,7 @@
     "description": "Clipboard is the operating system thing where you copy/paste data to on your device."
   },
   "notificationAddDesc": {
-    "message": "Deve o Bitwarden memorizar esta palavra-passe para si?"
+    "message": "Deve o Nekowarden memorizar esta palavra-passe para si?"
   },
   "notificationAddSave": {
     "message": "Sim, guardar agora"
@@ -609,7 +609,7 @@
     "message": "Ask to update a login's password when a change is detected on a website."
   },
   "notificationChangeDesc": {
-    "message": "Pretende atualizar esta palavra-passe no Bitwarden?"
+    "message": "Pretende atualizar esta palavra-passe no Nekowarden?"
   },
   "notificationChangeSave": {
     "message": "Sim, atualizar agora"
@@ -665,7 +665,7 @@
     "message": "Esta exportação cifra os seus dados utilizando a chave de cifragem da sua conta. Se alguma vez mudar a chave de cifragem da sua conta, deve fazer a exportação novamente, já que não conseguirá decifrar este ficheiro de exportação."
   },
   "encExportAccountWarningDesc": {
-    "message": "As chaves de encriptação de conta são únicas para cada conta de utilizador Bitwarden, pelo que não se pode importar uma exportação encriptada para uma conta diferente."
+    "message": "As chaves de encriptação de conta são únicas para cada conta de utilizador Nekowarden, pelo que não se pode importar uma exportação encriptada para uma conta diferente."
   },
   "exportMasterPassword": {
     "message": "Introduza a sua palavra-passe mestra para exportar os dados do seu cofre."
@@ -677,7 +677,7 @@
     "message": "Saiba mais sobre as Organizações"
   },
   "learnOrgConfirmation": {
-    "message": "O Bitwarden permite que você compartilhe os itens do seu cofre com outras pessoas usando uma organização. Gostaria de visitar o site bitwarden.com para saber mais?"
+    "message": "O Nekowarden permite que você compartilhe os itens do seu cofre com outras pessoas usando uma organização. Gostaria de visitar o site bitwarden.com para saber mais?"
   },
   "moveToOrganization": {
     "message": "Mudança para Organização"
@@ -795,7 +795,7 @@
     "message": "É um membro premium!"
   },
   "premiumCurrentMemberThanks": {
-    "message": "Obrigado por apoiar o Bitwarden."
+    "message": "Obrigado por apoiar o Nekowarden."
   },
   "premiumPrice": {
     "message": "Tudo por apenas $PRICE$ /ano!",
@@ -924,7 +924,7 @@
     "message": "Ambiente auto-hospedado"
   },
   "selfHostedEnvironmentFooter": {
-    "message": "Especifique o URL de base da sua instalação local do Bitwarden alojada nas suas premissas."
+    "message": "Especifique o URL de base da sua instalação local do Nekowarden alojada nas suas premissas."
   },
   "customEnvironment": {
     "message": "Ambiente personalizado"
@@ -1353,7 +1353,7 @@
     "message": "Palavra-passe mestra fraca"
   },
   "weakMasterPasswordDesc": {
-    "message": "A palavra-passe mestra que escolheu é fraca. Deve utilizar uma palavra-passe mestra forte (ou uma frase-passe) para proteger adequadamente a sua conta Bitwarden. Tem a certeza de que pretende utilizar esta palavra-passe mestra?"
+    "message": "A palavra-passe mestra que escolheu é fraca. Deve utilizar uma palavra-passe mestra forte (ou uma frase-passe) para proteger adequadamente a sua conta Nekowarden. Tem a certeza de que pretende utilizar esta palavra-passe mestra?"
   },
   "pin": {
     "message": "PIN",
@@ -1363,7 +1363,7 @@
     "message": "Desbloquear com PIN"
   },
   "setYourPinCode": {
-    "message": "Defina o seu código PIN para desbloquear o Bitwarden. As suas definições PIN serão redefinidas se terminar sessão completamente da aplicação."
+    "message": "Defina o seu código PIN para desbloquear o Nekowarden. As suas definições PIN serão redefinidas se terminar sessão completamente da aplicação."
   },
   "pinRequired": {
     "message": "O código PIN é requerido."
@@ -1378,7 +1378,7 @@
     "message": "A aguardar confirmação do seu computador"
   },
   "awaitDesktopDesc": {
-    "message": "Por favor, confirme o uso de dados biométricos na aplicação Bitwarden Desktop para habilitar os dados biométricos do navegador."
+    "message": "Por favor, confirme o uso de dados biométricos na aplicação Nekowarden Desktop para habilitar os dados biométricos do navegador."
   },
   "lockWithMasterPassOnRestart": {
     "message": "Bloquear com palavra-passe mestra quando reiniciar o navegador"
@@ -1515,13 +1515,13 @@
     "message": "Integração com o navegador não está ativada"
   },
   "desktopIntegrationDisabledDesc": {
-    "message": "A integração com o navegador não está habilitada no aplicativo Bitwarden Desktop. Por favor, habilite-o nas configurações da aplicação para computador."
+    "message": "A integração com o navegador não está habilitada no aplicativo Nekowarden Desktop. Por favor, habilite-o nas configurações da aplicação para computador."
   },
   "startDesktopTitle": {
-    "message": "Iniciar a aplicação Bitwarden Desktop"
+    "message": "Iniciar a aplicação Nekowarden Desktop"
   },
   "startDesktopDesc": {
-    "message": "The Bitwarden desktop application needs to be started before unlock with biometrics can be used."
+    "message": "The Nekowarden desktop application needs to be started before unlock with biometrics can be used."
   },
   "errorEnableBiometricTitle": {
     "message": "Unable to set up biometrics"
@@ -1557,7 +1557,7 @@
     "message": "Permission not provided"
   },
   "nativeMessaginPermissionErrorDesc": {
-    "message": "Without permission to communicate with the Bitwarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
+    "message": "Without permission to communicate with the Nekowarden Desktop Application we cannot provide biometrics in the browser extension. Please try again."
   },
   "nativeMessaginPermissionSidebarTitle": {
     "message": "Permission request error"
@@ -1575,7 +1575,7 @@
     "message": "Excluded domains"
   },
   "excludedDomainsDesc": {
-    "message": "Bitwarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
+    "message": "Nekowarden will not ask to save login details for these domains. You must refresh the page for changes to take effect."
   },
   "excludedDomainsInvalidDomain": {
     "message": "$DOMAIN$ não é um domínio válido",
@@ -1588,15 +1588,15 @@
   },
   "send": {
     "message": "Envio",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "searchSends": {
     "message": "Pesquisar Envios",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "addSend": {
     "message": "Adicionar Envio",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendTypeText": {
     "message": "Texto"
@@ -1606,7 +1606,7 @@
   },
   "allSends": {
     "message": "Todos os Envios",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "maxAccessCountReached": {
     "message": "Número de acessos máximo atingido",
@@ -1623,7 +1623,7 @@
   },
   "copySendLink": {
     "message": "Copiar Send link",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "removePassword": {
     "message": "Remover palavra-passe"
@@ -1636,11 +1636,11 @@
   },
   "deletedSend": {
     "message": "Envio eliminado",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendLink": {
     "message": "Link de Envio",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "disabled": {
     "message": "Desabilitado"
@@ -1650,23 +1650,23 @@
   },
   "deleteSend": {
     "message": "Eliminar Envio",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "deleteSendConfirmation": {
     "message": "Tem a certeza que pretende eliminar este Envio?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "editSend": {
     "message": "Editar Envio",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendTypeHeader": {
     "message": "Que tipo de Envio é este?",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendNameDesc": {
     "message": "Um nome amigável para descrever este Envio.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendFileDesc": {
     "message": "O ficheiro que deseja enviar."
@@ -1676,14 +1676,14 @@
   },
   "deletionDateDesc": {
     "message": "The Send will be permanently deleted on the specified date and time.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "expirationDate": {
     "message": "Expiration date"
   },
   "expirationDateDesc": {
     "message": "If set, access to this Send will expire on the specified date and time.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "oneDay": {
     "message": "1 day"
@@ -1705,56 +1705,56 @@
   },
   "maximumAccessCountDesc": {
     "message": "If set, users will no longer be able to access this Send once the maximum access count is reached.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendPasswordDesc": {
     "message": "Optionally require a password for users to access this Send.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendNotesDesc": {
     "message": "Private notes about this Send.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendDisableDesc": {
     "message": "Deactivate this Send so that no one can access it.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendShareDesc": {
     "message": "Copy this Send's link to clipboard upon save.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendTextDesc": {
     "message": "The text you want to send."
   },
   "sendHideText": {
     "message": "Hide this Send's text by default.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "currentAccessCount": {
     "message": "Current access count"
   },
   "createSend": {
     "message": "New Send",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "newPassword": {
     "message": "New password"
   },
   "sendDisabled": {
     "message": "Send removed",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendDisabledWarning": {
     "message": "Due to an enterprise policy, you are only able to delete an existing Send.",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "createdSend": {
     "message": "Send created",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "editedSend": {
     "message": "Send saved",
-    "description": "'Send' is a noun and the name of a feature called 'Bitwarden Send'. It should not be translated."
+    "description": "'Send' is a noun and the name of a feature called 'Nekowarden Send'. It should not be translated."
   },
   "sendLinuxChromiumFileWarning": {
     "message": "In order to choose a file, open the extension in the sidebar (if possible) or pop out to a new window by clicking this banner."
