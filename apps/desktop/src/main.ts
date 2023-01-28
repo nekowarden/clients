@@ -46,7 +46,7 @@ export class Main {
     if (process.env.BITWARDEN_APPDATA_DIR != null) {
       appDataPath = process.env.BITWARDEN_APPDATA_DIR;
     } else if (process.platform === "win32" && process.env.PORTABLE_EXECUTABLE_DIR != null) {
-      appDataPath = path.join(process.env.PORTABLE_EXECUTABLE_DIR, "bitwarden-appdata");
+      appDataPath = path.join(process.env.PORTABLE_EXECUTABLE_DIR, "nekowarden-appdata");
     } else if (process.platform === "linux" && process.env.SNAP_USER_DATA != null) {
       appDataPath = path.join(process.env.SNAP_USER_DATA, "appdata");
     }
@@ -105,7 +105,7 @@ export class Main {
       (win) => this.trayMain.setupWindowListeners(win)
     );
     this.messagingMain = new MessagingMain(this, this.stateService);
-    this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, "bitwarden");
+    this.updaterMain = new UpdaterMain(this.i18nService, this.windowMain, "nekowarden");
     this.menuMain = new MenuMain(this);
     this.powerMonitorMain = new PowerMonitorMain(this);
     this.trayMain = new TrayMain(this.windowMain, this.i18nService, this.stateService);
@@ -130,7 +130,7 @@ export class Main {
     }
 
     this.desktopCredentialStorageListener = new DesktopCredentialStorageListener(
-      "Bitwarden",
+      "Nekowarden",
       this.biometricMain
     );
 
@@ -150,7 +150,7 @@ export class Main {
         await this.i18nService.init(locale != null ? locale : app.getLocale());
         this.messagingMain.init();
         this.menuMain.init();
-        await this.trayMain.init("Bitwarden", [
+        await this.trayMain.init("Nekowarden", [
           {
             label: this.i18nService.t("lockVault"),
             enabled: false,
@@ -174,15 +174,15 @@ export class Main {
           this.nativeMessagingMain.listen();
         }
 
-        app.removeAsDefaultProtocolClient("bitwarden");
+        app.removeAsDefaultProtocolClient("nekowarden");
         if (process.env.NODE_ENV === "development" && process.platform === "win32") {
           // Fix development build on Windows requirering a different protocol client
-          app.setAsDefaultProtocolClient("bitwarden", process.execPath, [
+          app.setAsDefaultProtocolClient("nekowarden", process.execPath, [
             process.argv[1],
             path.resolve(process.argv[2]),
           ]);
         } else {
-          app.setAsDefaultProtocolClient("bitwarden");
+          app.setAsDefaultProtocolClient("nekowarden");
         }
 
         // Process protocol for macOS
@@ -208,7 +208,7 @@ export class Main {
 
   private processDeepLink(argv: string[]): void {
     argv
-      .filter((s) => s.indexOf("bitwarden://") === 0)
+      .filter((s) => s.indexOf("nekowarden://") === 0)
       .forEach((s) => {
         const url = new URL(s);
         const code = url.searchParams.get("code");
