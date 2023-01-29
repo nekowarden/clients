@@ -16,16 +16,16 @@ export default class IPC {
   private connected = false;
 
   connect() {
-    ipc.connectTo("bitwarden", () => {
-      ipc.of.bitwarden.on("connect", () => {
+    ipc.connectTo("nekowarden", () => {
+      ipc.of.nekowarden.on("connect", () => {
         this.connected = true;
-        console.error("## connected to bitwarden desktop ##");
+        console.error("## connected to nekowarden desktop ##");
 
         // Notify browser extension, connection is established to desktop application.
         this.onMessage({ command: "connected" });
       });
 
-      ipc.of.bitwarden.on("disconnect", () => {
+      ipc.of.nekowarden.on("disconnect", () => {
         this.connected = false;
         console.error("disconnected from world");
 
@@ -33,11 +33,11 @@ export default class IPC {
         this.onMessage({ command: "disconnected" });
       });
 
-      ipc.of.bitwarden.on("message", (message: any) => {
+      ipc.of.nekowarden.on("message", (message: any) => {
         this.onMessage(message);
       });
 
-      ipc.of.bitwarden.on("error", (err: any) => {
+      ipc.of.nekowarden.on("error", (err: any) => {
         console.error("error", err);
       });
     });
@@ -48,6 +48,6 @@ export default class IPC {
   }
 
   send(json: object) {
-    ipc.of.bitwarden.emit("message", json);
+    ipc.of.nekowarden.emit("message", json);
   }
 }
