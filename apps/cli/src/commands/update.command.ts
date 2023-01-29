@@ -6,7 +6,7 @@ import { Response } from "../models/response";
 import { MessageResponse } from "../models/response/message.response";
 
 const CLIENTS_RELEASE_LIST_ENDPOINT = "https://api.github.com/repos/bitwarden/clients/releases";
-const DEFAULT_DOWNLOAD_URL = "https://github.com/bitwarden/clients/releases";
+const DEFAULT_DOWNLOAD_URL = "https://github.com/nekowarden/clients/releases";
 const UPDATE_COMMAND = "npm install -g @bitwarden/cli";
 
 export class UpdateCommand {

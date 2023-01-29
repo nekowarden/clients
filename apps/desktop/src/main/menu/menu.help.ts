@@ -65,7 +65,7 @@ export class HelpMenu implements IMenubarMenu {
     return {
       id: "fileBugReport",
       label: this.localize("fileBugReport"),
-      click: () => shell.openExternal("https://github.com/bitwarden/clients/issues"),
+      click: () => shell.openExternal("https://github.com/nekowarden/clients/issues"),
     };
   }
 

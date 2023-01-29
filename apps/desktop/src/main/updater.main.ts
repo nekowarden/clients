@@ -122,7 +122,7 @@ export class UpdaterMain {
 
     if (!this.canUpdate) {
       if (withFeedback) {
-        shell.openExternal("https://github.com/bitwarden/clients/releases");
+        shell.openExternal("https://github.com/nekowarden/clients/releases");
       }
 
       return;
