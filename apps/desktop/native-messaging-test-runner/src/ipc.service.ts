@@ -12,7 +12,7 @@ NodeIPC.config.id = "native-messaging-test-runner";
 NodeIPC.config.maxRetries = 0;
 NodeIPC.config.silent = true;
 
-const DESKTOP_APP_PATH = `${homedir}/tmp/app.bitwarden`;
+const DESKTOP_APP_PATH = `${homedir}/tmp/app.nekowarden`;
 const DEFAULT_MESSAGE_TIMEOUT = 10 * 1000; // 10 seconds
 
 export type MessageHandler = (MessageCommon) => void;

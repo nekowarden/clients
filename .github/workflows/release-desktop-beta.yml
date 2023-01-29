@@ -37,7 +37,7 @@ jobs:
       - name: Bump Desktop Version - Root
         env:
           VERSION: ${{ github.event.inputs.version_number }}
-        run: npm version --workspace=@bitwarden/desktop ${VERSION}-beta
+        run: npm version --workspace=@nekowarden/desktop ${VERSION}-beta
 
       - name: Bump Desktop Version - App
         env:

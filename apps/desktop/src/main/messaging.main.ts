@@ -122,8 +122,8 @@ export class MessagingMain {
       const data = `[Desktop Entry]
 Type=Application
 Version=${app.getVersion()}
-Name=Bitwarden
-Comment=Bitwarden startup script
+Name=Nekowarden
+Comment=Nekowarden startup script
 Exec=${app.getPath("exe")}
 StartupNotify=false
 Terminal=false`;
@@ -149,7 +149,7 @@ Terminal=false`;
   }
 
   private linuxStartupFile(): string {
-    return path.join(app.getPath("home"), ".config", "autostart", "bitwarden.desktop");
+    return path.join(app.getPath("home"), ".config", "autostart", "nekowarden.desktop");
   }
 
   private setFocus() {

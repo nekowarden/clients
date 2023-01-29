@@ -36,7 +36,7 @@ export default class NativeMessageService {
 
   constructor(private apiVersion: number) {
     console.log("Starting native messaging service");
-    this.ipcService = new IPCService(`bitwarden`, (rawMessage) => {
+    this.ipcService = new IPCService(`nekowarden`, (rawMessage) => {
       console.log(`Received unexpected: `, rawMessage);
     });
 
