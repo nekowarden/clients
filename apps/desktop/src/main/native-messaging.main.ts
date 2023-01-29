@@ -167,7 +167,7 @@ export class NativeMessagingMain {
   generateDdgManifests() {
     const manifest = {
       name: "com.shiyunjin.nekowarden",
-      description: "Bitwarden desktop <-> DuckDuckGo bridge",
+      description: "Nekowarden desktop <-> DuckDuckGo bridge",
       path: this.binaryPath(),
       type: "stdio",
     };
