@@ -1,6 +1,14 @@
 import * as path from "path";
 
-import { app, BrowserWindow, Menu, MenuItemConstructorOptions, nativeImage, Tray } from "electron";
+import {
+  app,
+  BrowserWindow,
+  Menu,
+  MenuItemConstructorOptions,
+  nativeImage,
+  Tray,
+  globalShortcut,
+} from "electron";
 
 import { I18nService } from "@bitwarden/common/abstractions/i18n.service";
 import { StateService } from "@bitwarden/common/abstractions/state.service";
@@ -21,16 +29,16 @@ export class TrayMain {
     private stateService: StateService
   ) {
     if (process.platform === "win32") {
-      this.icon = path.join(__dirname, "/images/icon.ico");
+      this.icon = path.join(__dirname, "/images/notification_area_locked.ico");
     } else if (process.platform === "darwin") {
-      const nImage = nativeImage.createFromPath(path.join(__dirname, "/images/icon-template.png"));
+      const nImage = nativeImage.createFromPath(path.join(__dirname, "/images/tray_unlocked.png"));
       nImage.setTemplateImage(true);
       this.icon = nImage;
       this.pressedIcon = nativeImage.createFromPath(
         path.join(__dirname, "/images/icon-highlight.png")
       );
     } else {
-      this.icon = path.join(__dirname, "/images/icon.png");
+      this.icon = path.join(__dirname, "/images/tray_unlocked.png");
     }
   }
 
@@ -41,6 +49,7 @@ export class TrayMain {
       {
         label: this.i18nService.t("showHide"),
         click: () => this.toggleWindow(),
+        accelerator: "CmdOrCtrl+Shift+\\",
       },
       { type: "separator" },
       {
@@ -52,6 +61,10 @@ export class TrayMain {
     if (additionalMenuItems != null) {
       menuItemOptions.splice(1, 0, ...additionalMenuItems);
     }
+
+    globalShortcut.register("CmdOrCtrl+Shift+\\", () => {
+      this.toggleWindow();
+    });
 
     this.contextMenu = Menu.buildFromTemplate(menuItemOptions);
     if (await this.stateService.getEnableTray()) {
@@ -164,16 +177,9 @@ export class TrayMain {
       }
       return;
     }
-    if (this.windowMain.win.isVisible()) {
-      this.windowMain.win.hide();
-      if (this.isDarwin() && !(await this.stateService.getAlwaysShowDock())) {
-        this.hideDock();
-      }
-    } else {
-      this.windowMain.win.show();
-      if (this.isDarwin()) {
-        this.showDock();
-      }
+    this.windowMain.win.show();
+    if (this.isDarwin()) {
+      this.showDock();
     }
   }
 
@@ -182,5 +188,15 @@ export class TrayMain {
     if (this.windowMain.win != null) {
       this.windowMain.win.close();
     }
+  }
+
+  setTrayImageUnlock() {
+    this.icon = path.join(__dirname, "/images/notification_area_unlocked.ico");
+    this.tray.setImage(this.icon);
+  }
+
+  setTrayImageLocked() {
+    this.icon = path.join(__dirname, "/images/notification_area_locked.ico");
+    this.tray.setImage(this.icon);
   }
 }
