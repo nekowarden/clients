@@ -2,7 +2,7 @@
   "name": "@nekowarden/desktop",
   "productName": "Nekowarden",
   "description": "A secure and free password manager for all of your devices.",
-  "version": "2023.102.0",
+  "version": "2023.102.1",
   "author": "Nekowarden Inc. <to@shiyunjin.cn> (https://github.com/nekowarden)",
   "homepage": "https://github.com/nekowarden",
   "license": "GPL-3.0",
