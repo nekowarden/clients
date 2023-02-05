@@ -52,6 +52,12 @@ export class MessagingMain {
       case "hideToTray":
         this.main.trayMain.hideToTray();
         break;
+      case "setTrayImageUnlock":
+        this.main.trayMain.setTrayImageUnlock();
+        break;
+      case "setTrayImageLocked":
+        this.main.trayMain.setTrayImageLocked();
+        break;
       case "addOpenAtLogin":
         this.addOpenAtLogin();
         break;

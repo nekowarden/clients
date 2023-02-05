@@ -155,6 +155,7 @@ export class AppComponent implements OnInit, OnDestroy {
             this.notificationsService.updateConnection();
             this.updateAppMenu();
             this.systemService.cancelProcessReload();
+            this.messagingService.send("setTrayImageUnlock");
             break;
           case "loggedOut":
             this.modalService.closeAll();
@@ -193,6 +194,7 @@ export class AppComponent implements OnInit, OnDestroy {
             await this.updateAppMenu();
             await this.systemService.clearPendingClipboard();
             await this.systemService.startProcessReload(this.authService);
+            this.messagingService.send("setTrayImageLocked");
             break;
           case "reloadProcess":
             (window.location as any).reload(true);

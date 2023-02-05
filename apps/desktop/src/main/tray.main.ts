@@ -21,16 +21,16 @@ export class TrayMain {
     private stateService: StateService
   ) {
     if (process.platform === "win32") {
-      this.icon = path.join(__dirname, "/images/icon.ico");
+      this.icon = path.join(__dirname, "/images/notification_area_locked.ico");
     } else if (process.platform === "darwin") {
-      const nImage = nativeImage.createFromPath(path.join(__dirname, "/images/icon-template.png"));
+      const nImage = nativeImage.createFromPath(path.join(__dirname, "/images/tray_unlocked.png"));
       nImage.setTemplateImage(true);
       this.icon = nImage;
       this.pressedIcon = nativeImage.createFromPath(
         path.join(__dirname, "/images/icon-highlight.png")
       );
     } else {
-      this.icon = path.join(__dirname, "/images/icon.png");
+      this.icon = path.join(__dirname, "/images/tray_unlocked.png");
     }
   }
 
@@ -182,5 +182,15 @@ export class TrayMain {
     if (this.windowMain.win != null) {
       this.windowMain.win.close();
     }
+  }
+
+  setTrayImageUnlock() {
+    this.icon = path.join(__dirname, "/images/notification_area_unlocked.ico");
+    this.tray.setImage(this.icon);
+  }
+
+  setTrayImageLocked() {
+    this.icon = path.join(__dirname, "/images/notification_area_locked.ico");
+    this.tray.setImage(this.icon);
   }
 }
