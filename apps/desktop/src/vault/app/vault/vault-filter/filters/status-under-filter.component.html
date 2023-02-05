@@ -4,6 +4,7 @@
       <span class="filter-buttons">
         <button
           class="filter-button"
+          type="button"
           (click)="applyFilter('sends')"
           [attr.aria-pressed]="activeFilter.status === 'sends'"
         >
@@ -19,6 +20,7 @@
       <span class="filter-buttons">
         <button
           class="filter-button"
+          type="button"
           (click)="applyFilter('trash')"
           [attr.aria-pressed]="activeFilter.status === 'trash'"
         >
